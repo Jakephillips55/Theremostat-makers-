@@ -13,12 +13,12 @@ Thermostat.prototype.getCurrenttemp = function(){
 }
 
 Thermostat.prototype.raiseTemp = function(){
-    if(this.getCurrenttemp >= this.MAX_TEMP){ return "Out of Range"}
-
+  //  if(this.getCurrenttemp >= this.MAX_TEMP){ return "Out of Range"}
+    this.queryRange(); 
     return this.temp += 1     
 }
 Thermostat.prototype.dropTemp = function(){
-    if(this.getCurrenttemp <= this.MIN_TEMP){ return "Out of Range"}
+    this.queryRange();
     return this.temp -= 1
 }
 
@@ -36,7 +36,10 @@ Thermostat.prototype.reset = function(){
 Thermostat.prototype.maxTemp = function(){
     if(this.eco === false){this.MAX_TEMP = 32}
 }
+Thermostat.prototype.queryRange = function(){
+    if(this.getCurrenttemp >= this.MAX_TEMP || this.getCurrenttemp <= this.MIN_TEMP){ return "Out of Range"}
 
+}
 Thermostat.prototype.queryUsage = function(){
     if (this.temp <= 18) {
        return 'Low usage'
