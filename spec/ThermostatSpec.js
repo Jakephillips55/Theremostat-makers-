@@ -8,7 +8,7 @@ describe('Thermostat', function() {
     }); 
 
     it('starts at standard temp', function(){
-        expect(thermostat.getCurrenttemp()).toEqual(20); 
+        expect(thermostat.getCurrentTemp()).toEqual(20); 
     }); 
 
     describe('Controls Temp', function(){

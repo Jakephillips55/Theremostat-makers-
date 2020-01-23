@@ -1,34 +1,60 @@
 <!Doctype html>
 <html lang="en">
   <head>
+    <link type="text/css" rel="stylesheet" href="css/usage-colour.css" > </link>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Thermostat</title>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
 </head>
 <body>
   <section> 
-  <h1 id = 'temperature' > test </h1>
+    <body style option value >
+  <h1 >Outside temperature: <span id="current-temperature"></span>
+    <form id="select-city">
+      <input id="current-city" type="text" placeholder="Enter a city"></input>
+      <input type="submit"></input>
+    </form>
+    <form id = "font"> 
+      <select id="current-temperature">
+        <option value="Arial">Arial</option>
+        <option value="Verdana">Verdana</option>
+        <option value="Impact">Impact</option>
+        <option value="Comic Sans MS">Sans </option>
+      </select>
+    </body>
+    </form>
+  <h1> Thermostat temp: <span id="getCurrentTemp"> </span>
+
+  </h1>
+</h1
+>
   <p>
     <br>
-    <button id="Raise temp"> ⬆️ Raise Temp </button>
+    <button id="raiseTemp"> ⬆️ Raise Temp </button>
   <br>
-    <button id="Drop temp"> ⬇️ Drop Temp </button>
+  <br> 
+    <button id="getCurrentTemp"> Current temp  </button> 
+    <br> 
+    <button id="dropTemp"> ⬇️ Drop Temp </button>
     <br>
-    <button id = "Reset" > 🔄 Reset </button>
+    <button id = "reset" > 🔄 Reset </button>
     <br>
-    power saving mode is <span id="power-saving-status"> on </span>
+    <!-- power saving mode is on <span id="pwrSave">  </span> -->
     <br>
-    <button id = "Eco" > 💚 ECO </button>
+    <button id="pwrSave"> 💚 ECO </button>
     <br>
-    <button id="Eco Off"> 🚮 ECO OFF </button>
+    <button id="ecoOff"> 🚮 ECO OFF </button>
     <br>
-    <button id="Usage data"> user info </button>
+    <button id="queryUsage"> user info </button>
   </p>
   <!-- seperation of concerns  -->
-  <script src="thermostat.js" </script>
-
+  <script src="src/interface.js" ></script>
+  <script src="src/thermostat.js"></script>
   </section>
-
  </body>
 </html>

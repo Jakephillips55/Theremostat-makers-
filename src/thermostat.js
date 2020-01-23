@@ -1,6 +1,5 @@
 'use strict'; 
 
-
 function Thermostat(){
     this.eco = true;
     this.temp = 20; 
@@ -8,17 +7,20 @@ function Thermostat(){
     this.MIN_TEMP = 10
 }
 
-Thermostat.prototype.getCurrenttemp = function(){
+Thermostat.prototype.getCurrentTemp = function(){
     return this.temp
 }
 
 Thermostat.prototype.raiseTemp = function(){
   //  if(this.getCurrenttemp >= this.MAX_TEMP){ return "Out of Range"}
-    this.queryRange(); 
+    this.queryRange();
+    if(this.temp < this.MAX_TEMP )
     return this.temp += 1     
+    
 }
 Thermostat.prototype.dropTemp = function(){
     this.queryRange();
+    if(this.temp > this.MIN_TEMP)
     return this.temp -= 1
 }
 
