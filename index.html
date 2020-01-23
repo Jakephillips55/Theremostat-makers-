@@ -1,7 +1,7 @@
 <!Doctype html>
 <html lang="en">
   <head>
-    <link type="text/css" rel="stylesheet" href="css/usage-colour.css" > </link>
+    <link type="text/css" rel="stylesheet" href="public/css/style.css" > </link>
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
@@ -11,28 +11,28 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     </head>
 </head>
+
+  
 <body>
   <section> 
-    <body style option value >
-  <h1 >Outside temperature: <span id="current-temperature"></span>
+
+        <select id="current-temperature">
+          <option value="Arial">Arial</option>
+          <option value="Verdana">Verdana</option>
+          <option value="Impact">Impact</option>
+          <option value="Comic Sans MS">Sans </option>
+        </select>
+      
+     
+  <h1 >Outside temperature: <span id="local-temp"></span>
     <form id="select-city">
       <input id="current-city" type="text" placeholder="Enter a city"></input>
       <input type="submit"></input>
     </form>
-    <form id = "font"> 
-      <select id="current-temperature">
-        <option value="Arial">Arial</option>
-        <option value="Verdana">Verdana</option>
-        <option value="Impact">Impact</option>
-        <option value="Comic Sans MS">Sans </option>
-      </select>
-    </body>
-    </form>
-  <h1> Thermostat temp: <span id="getCurrentTemp"> </span>
-
-  </h1>
-</h1
->
+    <div id="temp-display">
+      Thermostat temp: <span id="getCurrentTemp"> </span>
+    </div>
+</h1>
   <p>
     <br>
     <button id="raiseTemp"> ⬆️ Raise Temp </button>
@@ -52,6 +52,9 @@
     <br>
     <button id="queryUsage"> user info </button>
   </p>
+
+  <footer id="footer" class="footer py-2 px-3">
+  </footer>
   <!-- seperation of concerns  -->
   <script src="src/interface.js" ></script>
   <script src="src/thermostat.js"></script>

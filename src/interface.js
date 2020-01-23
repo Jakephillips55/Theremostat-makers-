@@ -1,5 +1,7 @@
 $(document).ready(function() {
     var thermostat = new Thermostat()
+
+    updateFont();
     updateTemp();
 
 $('#getCurrentTemp').text(thermostat.temp);
@@ -35,19 +37,26 @@ function updateTemp() {
     // $('#temp').attr('class', thermostat.queryUsage());
     };
 
-   
-$("#font").change(function() {
-    //alert($(this).val());
-    $('Outside temp').css("font-family", $(this).val());
+$('#current-temperature').change(function() {
+    updateFont()
 })
-$.get('http://api.openweathermap.org/data/2.5/weather?q=London&appid=a3d9eb01d4de82b9b8d0849ef604dbed&units=metric', function(data) {
-  $('#current-temperature').text(data.main.temp);
+   
+function updateFont() {
+    $("body").css("font-family", $('#current-temperature').val());
+}
+
+$.get('http://api.openweathermap.org/data/2.5/weather?q=London&appid=a3d9eb01d4de82b9b8d0849ef604dbed&units=metric', 
+function(data) {
+  $('#local-temp').text(data.main.temp);
 })
 $('#select-city').submit(function(event) {
     event.preventDefault();
     var city = $('#current-city').val();
-    $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=a3d9eb01d4de82b9b8d0849ef604dbed&units=metric', function(data) {
-      $('#current-temperature').text(data.main.temp);
+    $.get('http://api.openweathermap.org/data/2.5/weather?q=' + 
+    city + 
+    '&appid=a3d9eb01d4de82b9b8d0849ef604dbed&units=metric', 
+    function(data) {
+      $('#local-temp').text(data.main.temp);
     })
 
   })
