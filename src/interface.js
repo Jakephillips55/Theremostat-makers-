@@ -22,15 +22,30 @@ $('#reset').click(function(){
     thermostat.reset(); 
     updateTemp();
 });
-$('#pwrSave').click(function(){
-    thermostat.pwrSave();
-    $('#pwrSave').text('is on')
-    updateTemp();
+// $('#pwrSave').click(function(){
+//     thermostat.pwrSave();
+//     $('#pwrSave').text('is on')
+//     updateTemp();
+// })
+
+
+
+$('#ecoToggle').click(function(){
+
+    if ($(this).val() == 'on') {
+        $(this).val('off')
+        thermostat.ecoOff()
+    }
+    else {
+        $(this).val('on')
+        thermostat.pwrSave()
+        console.log(thermostat.eco)
+    }
+    
 })
-$('#ecoOff').click(function(){
-    thermostat.ecoOff();
-    $('#ecoOff').text('off').click
-    updateTemp(); 
+
+$('#queryUsage').click(function(){ 
+    $('#queryUsage').text(thermostat.queryUsage())
 })
 function updateTemp() {
     $('#getCurrentTemp').text(thermostat.temp); 

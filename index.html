@@ -16,12 +16,14 @@
 <body>
   
   <section> 
-
+        
         <select id="current-temperature">
           <option value="Arial">Arial</option>
           <option value="Verdana">Verdana</option>
           <option value="Impact">Impact</option>
           <option value="Comic Sans MS">Sans </option>
+          <option value="Arial Narrow"> Narrow </option>
+          <option value="Franklin Gothic Medium"> Gothic </option>
         </select>
       
      
@@ -43,10 +45,15 @@
     <br>
     <!-- power saving mode is on <span id="pwrSave">  </span> -->
     <br>
-    <button id="pwrSave"> 💚 ECO </button>
-    <button id="ecoOff"> 🚮 ECO OFF </button>
+    <!-- <button id="pwrSave" value="true"> 💚 ECO </button> -->
+    ECO Toggle
+    <label class="switch">
+      <input type="checkbox" id='ecoToggle' checked>
+      <span class="slider"></span>
+    </label>
+    
     <br>
-    <button id="queryUsage"> user info </button>
+    <button id="queryUsage"> usage info </button>
   </p>
 
   <footer id="footer" class="footer py-2 px-3">
